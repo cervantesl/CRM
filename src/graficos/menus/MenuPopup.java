@@ -15,7 +15,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.UIManager.LookAndFeelInfo;
 
 import graficos.VentanaPrincipal;
-import graficos.apariencia.VentanaApariencia;
+import graficos.apariencia.GestorInterfaz;
 import herramientas.CargadorRecursos;
 import herramientas.GestorEscritorio;
 import principal.Principal;
@@ -75,9 +75,9 @@ public class MenuPopup extends JPopupMenu implements ActionListener {
 		vistas.setIcon(CargadorRecursos.cargarIcono("/imagenes/ojo.png"));
 		add(vistas);
 
-		LookAndFeelInfo[] aspectos = VentanaApariencia.obtenerAspectos();
+		LookAndFeelInfo[] aspectos = GestorInterfaz.obtenerAspectos();
 
-		String[] nombreAspectos = VentanaApariencia.obtenerNombresAspectos(aspectos);
+		String[] nombreAspectos = GestorInterfaz.obtenerNombresAspectos(aspectos);
 		botonesRadioTiposAspecto = new JRadioButtonMenuItem[nombreAspectos.length];
 
 		grupoBotones = new ButtonGroup();
@@ -116,7 +116,7 @@ public class MenuPopup extends JPopupMenu implements ActionListener {
 
 		for (int i = 0; i < botonesRadioTiposAspecto.length; i++) {
 			if (botonesRadioTiposAspecto[i].isSelected()) {
-				VentanaApariencia.establecerAspecto(i);
+				GestorInterfaz.establecerAspecto(i);
 				Principal.actualizarVentanaPrincipal();
 			}
 		}

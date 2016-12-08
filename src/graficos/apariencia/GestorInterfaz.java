@@ -4,7 +4,7 @@ import javax.swing.UIManager;
 import javax.swing.UIManager.LookAndFeelInfo;
 import javax.swing.UnsupportedLookAndFeelException;
 
-public class VentanaApariencia {
+public class GestorInterfaz {
 
 	private static LookAndFeelInfo[] aspectos;
 	private static String[] nombreAspectos;
