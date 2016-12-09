@@ -30,7 +30,7 @@ public class MenuPopup extends JPopupMenu implements ActionListener {
 
 	private JMenu vistas;
 
-	private JRadioButtonMenuItem[] botonesRadioTiposAspecto;
+	private static JRadioButtonMenuItem[] botonesRadioEspejo;
 	private ButtonGroup grupoBotones;
 
 	public MenuPopup() {
@@ -78,17 +78,17 @@ public class MenuPopup extends JPopupMenu implements ActionListener {
 		LookAndFeelInfo[] aspectos = GestorInterfaz.obtenerAspectos();
 
 		String[] nombreAspectos = GestorInterfaz.obtenerNombresAspectos(aspectos);
-		botonesRadioTiposAspecto = new JRadioButtonMenuItem[nombreAspectos.length];
+		botonesRadioEspejo = new JRadioButtonMenuItem[nombreAspectos.length];
 
 		grupoBotones = new ButtonGroup();
 
 		for (int i = 0; i < nombreAspectos.length; i++) {
-			grupoBotones.add(botonesRadioTiposAspecto[i] = new JRadioButtonMenuItem(nombreAspectos[i]));
-			vistas.add(botonesRadioTiposAspecto[i]);
-			botonesRadioTiposAspecto[i].addActionListener(this);
+			grupoBotones.add(botonesRadioEspejo[i] = new JRadioButtonMenuItem(nombreAspectos[i]));
+			vistas.add(botonesRadioEspejo[i]);
+			botonesRadioEspejo[i].addActionListener(this);
 		}
 
-		botonesRadioTiposAspecto[0].setSelected(true);
+		botonesRadioEspejo[0].setSelected(true);
 
 	}
 
@@ -114,11 +114,18 @@ public class MenuPopup extends JPopupMenu implements ActionListener {
 
 	public void obtenerBotonVistaSeleccionada(ActionEvent e) {
 
-		for (int i = 0; i < botonesRadioTiposAspecto.length; i++) {
-			if (botonesRadioTiposAspecto[i].isSelected()) {
+		JRadioButtonMenuItem[] botonesRadioTiposAspecto = BarraMenuPrincipal.obtenerBotonesRadioTiposAspecto();
+
+		for (int i = 0; i < botonesRadioEspejo.length; i++) {
+			if (botonesRadioEspejo[i].isSelected()) {
+				botonesRadioTiposAspecto[i].setSelected(true);
 				GestorInterfaz.establecerAspecto(i);
 				Principal.actualizarVentanaPrincipal();
 			}
 		}
+	}
+
+	public static JRadioButtonMenuItem[] obtenerBotonesRadioTiposAspecto() {
+		return botonesRadioEspejo;
 	}
 }

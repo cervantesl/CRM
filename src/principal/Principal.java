@@ -9,9 +9,7 @@ public class Principal {
 	private static VentanaPrincipal ventanaPrincipal;
 
 	public static void main(String[] args) {
-
 		ventanaPrincipal = new VentanaPrincipal();
-
 	}
 
 	public static VentanaPrincipal obtenerVentanaPrincipal() {
@@ -19,7 +17,7 @@ public class Principal {
 	}
 
 	public static void actualizarVentanaPrincipal() {
-		VentanaPrincipal p = Principal.obtenerVentanaPrincipal();
-		SwingUtilities.updateComponentTreeUI(p);
+		ventanaPrincipal = Principal.obtenerVentanaPrincipal();
+		SwingUtilities.updateComponentTreeUI(ventanaPrincipal);
 	}
 }

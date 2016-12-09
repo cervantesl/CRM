@@ -222,8 +222,11 @@ public class BarraMenuPrincipal extends JMenuBar implements ActionListener {
 
 	public void obtenerBotonVistaSeleccionada(ActionEvent e) {
 
+		JRadioButtonMenuItem[] botonesEspejo = MenuPopup.obtenerBotonesRadioTiposAspecto();
+
 		for (int i = 0; i < botonesRadioTiposAspecto.length; i++) {
 			if (botonesRadioTiposAspecto[i].isSelected()) {
+				botonesEspejo[i].setSelected(true);
 				GestorInterfaz.establecerAspecto(i);
 				Principal.actualizarVentanaPrincipal();
 			}
