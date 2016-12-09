@@ -8,7 +8,7 @@ import herramientas.GestorEscritorio;
 
 public class VentanaFormulario extends JInternalFrame implements InternalFrameListener {
 
-	private PanelFormulario formulario;
+	private final PanelFormulario formulario;
 	private boolean abierto = true;
 
 	public VentanaFormulario() {

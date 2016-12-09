@@ -13,11 +13,11 @@ import principal.Principal;
 
 public class BarraHerramientas extends JToolBar implements ActionListener {
 
-	private JButton nuevo;
-	private JButton editarUsuario;
-	private JButton consultarTablaClientes;
-	private JButton consultarActividades;
-	private JButton refrescar;
+	private final JButton nuevo;
+	// private final JButton editarUsuario;
+	private final JButton consultarTablaClientes;
+	private final JButton consultarActividades;
+	private final JButton refrescar;
 
 	public BarraHerramientas() {
 

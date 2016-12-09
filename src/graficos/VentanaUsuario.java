@@ -4,7 +4,7 @@ import javax.swing.JInternalFrame;
 
 public class VentanaUsuario extends JInternalFrame {
 
-	private PanelUsuario usuario;
+	private final PanelUsuario usuario;
 
 	public VentanaUsuario() {
 

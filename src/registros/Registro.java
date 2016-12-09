@@ -7,10 +7,10 @@ public abstract class Registro {
 	protected GestorBaseDatosSQLite conector = new GestorBaseDatosSQLite();
 
 	public void conectarBD() {
-		conector.connect();
+		conector.conectarConexionBD();
 	}
 
 	public void cerrarConexionBD() {
-		conector.close();
+		conector.cerrarConexionBD();
 	}
 }

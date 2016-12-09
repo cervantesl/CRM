@@ -22,16 +22,16 @@ import principal.Principal;
 
 public class MenuPopup extends JPopupMenu implements ActionListener {
 
-	private JMenuItem nuevoCliente;
-	private JMenuItem nuevaActividad;
-	private JMenuItem cargarHojaClientes;
-	private JMenuItem cargarHojaActividades;
-	private JMenuItem refrescar;
+	private final JMenuItem nuevoCliente;
+	private final JMenuItem nuevaActividad;
+	private final JMenuItem cargarHojaClientes;
+	private final JMenuItem cargarHojaActividades;
+	private final JMenuItem refrescar;
 
-	private JMenu vistas;
+	private final JMenu vistas;
 
 	private static JRadioButtonMenuItem[] botonesRadioEspejo;
-	private ButtonGroup grupoBotones;
+	private final ButtonGroup grupoBotones;
 
 	public MenuPopup() {
 
@@ -113,7 +113,6 @@ public class MenuPopup extends JPopupMenu implements ActionListener {
 	}
 
 	public void obtenerBotonVistaSeleccionada(ActionEvent e) {
-
 		JRadioButtonMenuItem[] botonesRadioTiposAspecto = BarraMenuPrincipal.obtenerBotonesRadioTiposAspecto();
 
 		for (int i = 0; i < botonesRadioEspejo.length; i++) {

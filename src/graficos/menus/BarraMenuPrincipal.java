@@ -24,33 +24,31 @@ import principal.Principal;
 
 public class BarraMenuPrincipal extends JMenuBar implements ActionListener {
 
-	private JMenu inicio;
-	private JMenu preferencias;
-	private JMenu ayuda;
+	private final JMenu inicio;
+	private final JMenu preferencias;
+	private final JMenu ayuda;
 
-	private JMenuItem acercaDe;
-	private JMenuItem salir;
-	private JMenuItem nuevoCliente;
-	private JMenuItem nuevaActividad;
-	private JMenuItem cargarHojaClientes;
-	private JMenuItem cargarHojaActividades;
-	private JMenuItem refrescar;
+	private final JMenuItem acercaDe;
+	private final JMenuItem salir;
+	private final JMenuItem nuevoCliente;
+	private final JMenuItem nuevaActividad;
+	private final JMenuItem cargarHojaClientes;
+	private final JMenuItem cargarHojaActividades;
+	private final JMenuItem refrescar;
 
-	private JMenu configuracion;
-	private JMenuItem editarUsuario;
+	private final JMenu configuracion;
+	private final JMenuItem editarUsuario;
 
 	private static JCheckBoxMenuItem mostrarBarraHerramientas;
 
 	private static JRadioButtonMenuItem[] botonesRadioTiposAspecto;
-	private ButtonGroup grupoBotones;
+	private final ButtonGroup grupoBotones;
 
-	private JMenu opciones;
-	private JMenuItem consultarTablaCliente;
-	private JMenuItem consultarTablaActividad;
+	private final JMenu opciones;
+	private final JMenuItem consultarTablaCliente;
+	private final JMenuItem consultarTablaActividad;
 
-	private JMenu vistas;
-
-	private PanelInformativo panelInformativo;
+	private final JMenu vistas;
 
 	public BarraMenuPrincipal() {
 
@@ -187,7 +185,7 @@ public class BarraMenuPrincipal extends JMenuBar implements ActionListener {
 			GestorEscritorio.escritorio.editarUsuario();
 			break;
 		case "Consultar Tabla Clientes":
-			GestorEscritorio.escritorio.obtenerTablaCliente();
+			// GestorEscritorio.escritorio.obtenerTablaCliente();
 			break;
 		case "Registrar nueva actividad": // ACABAR
 			break;
@@ -204,7 +202,7 @@ public class BarraMenuPrincipal extends JMenuBar implements ActionListener {
 	}
 
 	private void acercaDe() {
-		panelInformativo = new PanelInformativo();
+		PanelInformativo panelInformativo = new PanelInformativo();
 
 		String[] opciones = { "aceptar" };
 
@@ -221,7 +219,6 @@ public class BarraMenuPrincipal extends JMenuBar implements ActionListener {
 	}
 
 	public void obtenerBotonVistaSeleccionada(ActionEvent e) {
-
 		JRadioButtonMenuItem[] botonesEspejo = MenuPopup.obtenerBotonesRadioTiposAspecto();
 
 		for (int i = 0; i < botonesRadioTiposAspecto.length; i++) {

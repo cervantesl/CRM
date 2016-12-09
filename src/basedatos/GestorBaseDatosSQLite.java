@@ -11,11 +11,9 @@ import ente.Cliente;
 
 public class GestorBaseDatosSQLite {
 
-	String contenido;
+	private Connection connect;
 
-	Connection connect;
-
-	public void connect() {
+	public void conectarConexionBD() {
 
 		try {
 			Class.forName("org.sqlite.JDBC");
@@ -26,10 +24,9 @@ public class GestorBaseDatosSQLite {
 
 	}
 
-	public void close() {
+	public void cerrarConexionBD() {
 		try {
 			connect.close();
-			System.out.println("Conexion cerrada");
 		} catch (SQLException ex) {
 			ex.getMessage();
 		}
@@ -45,7 +42,7 @@ public class GestorBaseDatosSQLite {
 			st.setString(4, cliente.obtenerDni());
 			st.execute();
 		} catch (SQLException ex) {
-			System.out.println(ex.getMessage());
+			ex.getMessage();
 		}
 	}
 

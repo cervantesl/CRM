@@ -9,7 +9,6 @@ public class RegistrosCliente extends Registro {
 	public void crearCliente(final int id, final String nombre, final String apellidos, final String dni) {
 		cliente = new Cliente(id, nombre, apellidos, dni);
 		conector.guardarCliente(cliente);
-		conector.mostrarClientes();
 	}
 
 	public void eliminarCliente(final int id) {

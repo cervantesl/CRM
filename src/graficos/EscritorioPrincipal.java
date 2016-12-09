@@ -20,9 +20,9 @@ public class EscritorioPrincipal extends JDesktopPane implements MouseListener {
 
 	private boolean formularioAbierto = true;
 
-	private BufferedImage imagen;
+	private final BufferedImage imagen;
 
-	private MenuPopup menuPopup;
+	private final MenuPopup menuPopup;
 
 	public EscritorioPrincipal() {
 
@@ -68,10 +68,6 @@ public class EscritorioPrincipal extends JDesktopPane implements MouseListener {
 		usuario.setClosable(true);
 		usuario.setResizable(true);
 		usuario.setVisible(true);
-	}
-
-	public void obtenerTablaCliente() {
-
 	}
 
 	public void establecerFormularioAbierto(boolean abierto) {

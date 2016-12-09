@@ -8,7 +8,7 @@ import javax.swing.ImageIcon;
 
 public class CargadorRecursos {
 
-	public static ImageIcon cargarIcono(String ruta) {
+	public static ImageIcon cargarIcono(final String ruta) {
 
 		ImageIcon imagen = null;
 		try {
@@ -20,7 +20,7 @@ public class CargadorRecursos {
 		return imagen;
 	}
 
-	public static BufferedImage cargarImagen(String ruta) {
+	public static BufferedImage cargarImagen(final String ruta) {
 		BufferedImage imagen = null;
 		try {
 			imagen = ImageIO.read(ClassLoader.class.getResource(ruta));

@@ -12,16 +12,16 @@ import javax.swing.JPanel;
 
 public class PanelInformativo extends JPanel {
 
-	private int ancho = 400;
-	private int alto = 400;
+	private final int ancho = 400;
+	private final int alto = 400;
 
-	private JLabel titulo;
-	private JLabel informacion;
-	private JLabel version;
-	private JLabel autor;
-	private JLabel nombreAutor;
+	private final JLabel titulo;
+	private final JLabel informacion;
+	private final JLabel version;
+	private final JLabel autor;
+	private final JLabel nombreAutor;
 
-	private JPanel panelDatos;
+	private final JPanel panelDatos;
 
 	public PanelInformativo() {
 		setLayout(new BorderLayout());

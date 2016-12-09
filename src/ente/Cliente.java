@@ -2,12 +2,12 @@ package ente;
 
 public class Cliente {
 
-	private int id;
-	private String nombre;
-	private String apellidos;
-	private String dni;
+	private final int id;
+	private final String nombre;
+	private final String apellidos;
+	private final String dni;
 
-	public Cliente(int id, String nombre, String apellidos, String dni) {
+	public Cliente(final int id, final String nombre, final String apellidos, final String dni) {
 		this.id = id;
 		this.nombre = nombre;
 		this.apellidos = apellidos;

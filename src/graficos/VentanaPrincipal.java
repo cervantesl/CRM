@@ -16,14 +16,14 @@ import herramientas.GestorEscritorio;
 
 public class VentanaPrincipal extends JFrame {
 
-	private int ancho;
-	private int alto;
+	private final int ancho;
+	private final int alto;
 
-	private String nombre;
+	private final String nombre;
 
-	private BarraMenuPrincipal menuPrincipal;
+	private final BarraMenuPrincipal menuPrincipal;
 
-	private ImageIcon icono;
+	private final ImageIcon icono;
 
 	private static BarraHerramientas barraHerramientas;
 
@@ -51,7 +51,7 @@ public class VentanaPrincipal extends JFrame {
 
 		setIconImage(icono.getImage());
 
-		setTitle(Constantes.NOMBRE);
+		setTitle(nombre);
 		setPreferredSize(new Dimension(ancho, alto));
 		setSize(ancho, alto);
 		setVisible(true);

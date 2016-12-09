@@ -18,26 +18,26 @@ import registros.GestorRegistros;
 
 public class PanelFormulario extends JPanel implements ActionListener {
 
-	private JLabel id;
-	private JLabel nombre;
-	private JLabel apellidos;
-	private JLabel sexo;
-	private JLabel telefono;
-	private JLabel dni;
+	private final JLabel id;
+	private final JLabel nombre;
+	private final JLabel apellidos;
+	private final JLabel sexo;
+	private final JLabel telefono;
+	private final JLabel dni;
 
-	private JTextField campoId;
-	private JTextField campoNombre;
-	private JTextField campoApellidos;
-	private JTextField campoTelefono;
-	private JTextField campoDni;
+	private final JTextField campoId;
+	private final JTextField campoNombre;
+	private final JTextField campoApellidos;
+	private final JTextField campoTelefono;
+	private final JTextField campoDni;
 
-	private JComboBox<String> sexos;
+	private final JComboBox<String> sexos;
 
-	private JButton guardar;
-	private JButton eliminar;
-	private JButton editar;
+	private final JButton guardar;
+	private final JButton eliminar;
+	private final JButton editar;
 
-	private JPanel panelBotones;
+	private final JPanel panelBotones;
 
 	public PanelFormulario() {
 
@@ -178,25 +178,25 @@ public class PanelFormulario extends JPanel implements ActionListener {
 			String apellidos = campoApellidos.getText();
 			String dni = campoDni.getText();
 
-			GestorRegistros.registro.conectarBD();
-			GestorRegistros.registro.crearCliente(id, nombre, apellidos, dni);
-			GestorRegistros.registro.cerrarConexionBD();
+			GestorRegistros.registroCliente.conectarBD();
+			GestorRegistros.registroCliente.crearCliente(id, nombre, apellidos, dni);
+			GestorRegistros.registroCliente.cerrarConexionBD();
 
 		}
 
 		if (e.getSource() == eliminar) {
 			int id = Integer.parseInt(campoId.getText());
 
-			GestorRegistros.registro.conectarBD();
-			GestorRegistros.registro.eliminarCliente(id);
-			GestorRegistros.registro.cerrarConexionBD();
+			GestorRegistros.registroCliente.conectarBD();
+			GestorRegistros.registroCliente.eliminarCliente(id);
+			GestorRegistros.registroCliente.cerrarConexionBD();
 
 		}
 
 		if (e.getSource() == editar) {
-			GestorRegistros.registro.conectarBD();
-			GestorRegistros.registro.mostrarClientes();
-			GestorRegistros.registro.cerrarConexionBD();
+			GestorRegistros.registroCliente.conectarBD();
+			GestorRegistros.registroCliente.mostrarClientes();
+			GestorRegistros.registroCliente.cerrarConexionBD();
 		}
 
 	}
