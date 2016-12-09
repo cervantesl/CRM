@@ -1,9 +1,9 @@
-package gestornegocio;
+package registros;
 
 import basedatos.GestorBaseDatosSQLite;
 import ente.Cliente;
 
-public class Registros {
+public class RegistrosCliente {
 
 	private Cliente cliente;
 
