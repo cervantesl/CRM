@@ -1,27 +1,15 @@
 package registros;
 
-import basedatos.GestorBaseDatosSQLite;
 import ente.Cliente;
 
-public class RegistrosCliente {
+public class RegistrosCliente extends Registro {
 
 	private Cliente cliente;
 
-	private GestorBaseDatosSQLite conector = new GestorBaseDatosSQLite();
-
-	public void conectarBD() {
-		conector.connect();
-	}
-
-	public void crearCliente(int id, String nombre, String apellidos, String dni) {
-
+	public void crearCliente(final int id, final String nombre, final String apellidos, final String dni) {
 		cliente = new Cliente(id, nombre, apellidos, dni);
 		conector.guardarCliente(cliente);
 		conector.mostrarClientes();
-	}
-
-	public void cerrarConexionBD() {
-		conector.close();
 	}
 
 	public void eliminarCliente(final int id) {
@@ -30,6 +18,22 @@ public class RegistrosCliente {
 
 	public void mostrarClientes() {
 		conector.mostrarClientes();
+	}
+
+	public void editarCliente(final int id, final String campo, final String atributo) {
+
+	}
+
+	public void mostrarCliente(final int id) {
+
+	}
+
+	public void mostrarCliente(final String nombre) {
+
+	}
+
+	public void mostrarCliente(final String nombre, final String apellidos) {
+
 	}
 
 }
